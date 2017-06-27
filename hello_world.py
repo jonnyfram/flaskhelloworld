@@ -7,7 +7,8 @@ app=Flask(__name__)
 @app.route("/")
 @app.route("/hello")
 def say_hi():
-    return "Hello World!"
+    text = "Hello World!"
+    return render_template('hello_world.html', text = text)
 
 @app.route("/hello/<name>")
 def hi_person(name):
@@ -17,6 +18,10 @@ def hi_person(name):
 def jedi(firstname, lastname):
 
     return render_template('jedi.html', jedi= lastname[:3] + firstname[:2])
+
+@app.route("/test")
+def test():
+    return render_template('base.html')
     
 if __name__ == "__main__":
     app.run(host=environ['IP'], port=int(environ['PORT']))

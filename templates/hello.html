@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+  {# "block 'content'" link to base
+  
+  This page 'extends' base.html- so when you use this html file it uses the base file and replaces the 
+  block content with the block content below.
+  
+  #}
+{% block content %}
+<h1>
+    Hello {{my_name}}!
+</h1>
+{% endblock %}
+
